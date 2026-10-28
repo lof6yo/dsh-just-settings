@@ -1,0 +1,47 @@
+{
+  "name": "dsh-just-settings",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Replace the DSH sidebar's More menu with a single button that opens Settings.",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "web-ui",
+    "settings"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lof6yo/dsh-just-settings.git"
+  },
+  "homepage": "https://github.com/lof6yo/dsh-just-settings#readme",
+  "bugs": {
+    "url": "https://github.com/lof6yo/dsh-just-settings/issues"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "external": [
+        "@deepseek-ai/dsh-client-ui-primitives"
+      ]
+    }
+  }
+}
